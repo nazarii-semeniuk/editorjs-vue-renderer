@@ -19,7 +19,7 @@
     "scripts": {
         "build": "vite build --config vite.config.ts",
         "playground": "vite --config playground/vite.config.ts",
-        "test": "vitest",
+        "test": "vitest run --silent false",
         "lint": "eslint --ext .ts,.vue src playground",
         "release": "npm run lint && npm run test && changelogen --release && npm publish --access public && git push --follow-tags"
     },
