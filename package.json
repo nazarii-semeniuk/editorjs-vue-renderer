@@ -1,6 +1,6 @@
 {
     "name": "editorjs-vue-renderer",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "main": "./dist/editorjs-vue-renderer.umd.mjs",
     "module": "./dist/editorjs-vue-renderer.mjs",
     "types": "./dist/index.d.ts",
