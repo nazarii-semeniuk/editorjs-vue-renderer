@@ -6,7 +6,7 @@ A lightweight and flexible Vue 3 component that renders [Editor.js](https://edit
 
 ## 🚀 Features
 
-- 🧱 Support for `paragraph`, `header`, `image`, `list` blocks (more blocks in progress)
+- 🧱 Support for `paragraph`, `header`, `image`, `list`, `embed` and `quote` blocks (more blocks in progress)
 - 🔌 Easy integration of custom block components
 - 🧪 Tested with Vitest
 - ✅ TypeScript support
@@ -67,8 +67,8 @@ This component uses v-html internally to render content like paragraphs and head
 |   [header](https://www.npmjs.com/package/@editorjs/header)     | Supported ✅   |   { text: "Title", level: 2 }                  |
 |   [image](https://www.npmjs.com/package/@editorjs/image)      | Supported ✅   |   { url: "/path/to.jpg", caption: "Image" }    |
 |   [list](https://www.npmjs.com/package/@editorjs/list)       | Supported ✅   |   { items: ["one", "two"], style: "ordered" }  |
+| [quote](https://www.npmjs.com/package/@editorjs/quote)        | Supported ✅ |  { text: string, caption?: string }                                           |
 | [embed](https://www.npmjs.com/package/@editorjs/embed)        | Partial support ☑️ <br /> (youtube only) |  { service: 'youtube', embed: string }                                              |
-| [quote](https://www.npmjs.com/package/@editorjs/quote)        | 🚧 In progress |                                                |
 
 ## ➕ Custom Block Support
 
