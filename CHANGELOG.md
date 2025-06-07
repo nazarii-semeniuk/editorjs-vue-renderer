@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.3.0
+
+[compare changes](https://github.com/nazarii-semeniuk/editorjs-vue-renderer/compare/v0.2.0...v0.3.0)
+
+### 🚀 Enhancements
+
+- Adds support of Quote block ([1e34429](https://github.com/nazarii-semeniuk/editorjs-vue-renderer/commit/1e34429))
+
+### 🏡 Chore
+
+- Adds quote block to README ([d0e32c8](https://github.com/nazarii-semeniuk/editorjs-vue-renderer/commit/d0e32c8))
+
+### ❤️ Contributors
+
+- Nazarii Semeniuk <qnazar.semenyuk@gmail.com>
+
 ## v0.2.0
 
 [compare changes](https://github.com/nazarii-semeniuk/editorjs-vue-renderer/compare/v0.1.1...v0.2.0)
