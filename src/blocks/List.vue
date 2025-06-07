@@ -1,8 +1,6 @@
 <template>
     <component :is="listStyle === 'ordered' ? 'ol' : 'ul'" class="list">
-        <li v-for="(item, index) in items" :key="index">
-            {{ item }}
-        </li>
+        <li v-for="(item, index) in items" :key="index" v-html="item" />
     </component>
 </template>
 

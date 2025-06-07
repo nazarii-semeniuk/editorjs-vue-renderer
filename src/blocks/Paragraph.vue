@@ -1,5 +1,5 @@
 <template>
-    <p class="paragraph">{{ text }}</p>
+    <p class="paragraph" v-html="text" />
 </template>
 
 <script setup lang="ts">

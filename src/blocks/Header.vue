@@ -1,7 +1,5 @@
 <template>
-    <component :is="tag" :id="generateId()" class="header">
-        {{ text }}
-    </component>
+    <component :is="tag" :id="generateId()" class="header" v-html="text" />
 </template>
 
 <script setup lang="ts">

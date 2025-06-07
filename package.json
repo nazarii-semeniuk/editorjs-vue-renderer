@@ -21,7 +21,7 @@
         "playground": "vite --config playground/vite.config.ts",
         "test": "vitest run --silent false",
         "lint": "eslint --ext .ts,.vue src playground",
-        "release": "npm run lint && npm run test && changelogen --release && npm publish --access public && git push --follow-tags"
+        "release": "npm run lint && npm run test && changelogen --release --major && npm publish --access public && git push --follow-tags"
     },
     "dependencies": {
         "vue": "^3.5.16"
