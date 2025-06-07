@@ -67,8 +67,8 @@ This component uses v-html internally to render content like paragraphs and head
 |   [header](https://www.npmjs.com/package/@editorjs/header)     | Supported ✅   |   { text: "Title", level: 2 }                  |
 |   [image](https://www.npmjs.com/package/@editorjs/image)      | Supported ✅   |   { url: "/path/to.jpg", caption: "Image" }    |
 |   [list](https://www.npmjs.com/package/@editorjs/list)       | Supported ✅   |   { items: ["one", "two"], style: "ordered" }  |
+| [embed](https://www.npmjs.com/package/@editorjs/embed)        | Partial support ☑️ <br /> (youtube only) |  { service: 'youtube', embed: string }                                              |
 | [quote](https://www.npmjs.com/package/@editorjs/quote)        | 🚧 In progress |                                                |
-| [embed](https://www.npmjs.com/package/@editorjs/embed)        | 🚧 In progress |                                                |
 
 ## ➕ Custom Block Support
 
