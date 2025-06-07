@@ -39,12 +39,28 @@ export default [
         id: 'e',
         type: 'sum',
         data: {
-            numbers: [4, 4, 3]
-        }
+            numbers: [4, 4, 3],
+        },
     },
     {
         id: 'f',
         type: 'unsupported',
-        data: {}
-    }
+        data: {},
+    },
+    {
+        id: 'g',
+        type: 'embed',
+        data: {
+            service: 'youtube',
+            embed: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+        },
+    },
+    {
+        id: 'h',
+        type: 'embed',
+        data: {
+            service: 'twitter',
+            embed: 'https://x.com',
+        },
+    },
 ];

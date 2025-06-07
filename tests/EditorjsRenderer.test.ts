@@ -8,6 +8,7 @@ import Header from '../src/blocks/Header.vue';
 import Paragraph from '../src/blocks/Paragraph.vue';
 import Image from '../src/blocks/Image.vue';
 import List from '../src/blocks/List.vue';
+import Embed from '../src/blocks/Embed.vue';
 
 describe('EditorjsRenderer', () => {
     const defaultBlocks = {
@@ -15,6 +16,7 @@ describe('EditorjsRenderer', () => {
         paragraph: markRaw(Paragraph),
         image: markRaw(Image),
         list: markRaw(List),
+        embed: markRaw(Embed),
     };
 
     it('renders paragraph block correctly', async () => {
@@ -65,5 +67,23 @@ describe('EditorjsRenderer', () => {
         });
 
         expect(component.html()).not.toContain('Unsupported block type: unsupported');
+    });
+
+    it('renders embed block correctly', async () => {
+        const component = mount(EditorjsRenderer, {
+            props: { editorjsBlocks: editorjsBlocks, customBlocks: defaultBlocks },
+        });
+
+        expect(component.html()).toContain('<div class="youtube-embed">');
+        expect(component.html()).toContain('<iframe loading="lazy" src="https://www.youtube.com/embed/dQw4w9WgXcQ"');
+    });
+
+    it('renders embed fallback for unsupported services', async () => {
+        const component = mount(EditorjsRenderer, {
+            props: { editorjsBlocks: editorjsBlocks, customBlocks: defaultBlocks },
+        });
+
+        expect(component.html()).toContain('<div class="fallback-embed">');
+        expect(component.html()).toContain('Unfortunately, the twitter service is not supported');
     });
 });

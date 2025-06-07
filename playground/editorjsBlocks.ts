@@ -46,5 +46,21 @@ export default [
         id: 'f',
         type: 'unsupported',
         data: {}
-    }
+    },
+    {
+        id: 'g',
+        type: 'embed',
+        data: {
+            service: 'youtube',
+            embed: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+        },
+    },
+    {
+        id: 'h',
+        type: 'embed',
+        data: {
+            service: 'twitter',
+            embed: 'https://x.com',
+        },
+    },
 ];
