@@ -9,6 +9,7 @@ import Paragraph from '../src/blocks/Paragraph.vue';
 import Image from '../src/blocks/Image.vue';
 import List from '../src/blocks/List.vue';
 import Embed from '../src/blocks/Embed.vue';
+import Quote from '../src/blocks/Quote.vue';
 
 describe('EditorjsRenderer', () => {
     const defaultBlocks = {
@@ -17,6 +18,7 @@ describe('EditorjsRenderer', () => {
         image: markRaw(Image),
         list: markRaw(List),
         embed: markRaw(Embed),
+        quote: markRaw(Quote),
     };
 
     it('renders paragraph block correctly', async () => {
@@ -85,5 +87,23 @@ describe('EditorjsRenderer', () => {
 
         expect(component.html()).toContain('<div class="fallback-embed">');
         expect(component.html()).toContain('Unfortunately, the twitter service is not supported');
+    });
+
+    it('renders quote block correctly', async () => {
+        const component = mount(EditorjsRenderer, {
+            props: { editorjsBlocks: editorjsBlocks, customBlocks: defaultBlocks },
+        });
+
+        expect(component.html()).toContain('<blockquote>This is a quote block.</blockquote>');
+        expect(component.html()).toContain('<div class="quote__caption">Author Name</div>');
+    });
+
+    it("does not render quote caption if it's not provided", async () => {
+        const component = mount(EditorjsRenderer, {
+            props: { editorjsBlocks: editorjsBlocks, customBlocks: defaultBlocks },
+        });
+
+        const quoteCaptions = component.html().match(/<div class="quote__caption">/g);
+        expect(quoteCaptions).toHaveLength(1);
     });
 });

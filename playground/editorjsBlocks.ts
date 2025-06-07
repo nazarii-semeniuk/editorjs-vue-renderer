@@ -63,4 +63,13 @@ export default [
             embed: 'https://x.com',
         },
     },
+    {
+        id: 'i',
+        type: 'quote',
+        data: {
+            text: 'This is a quote block.',
+            caption: 'Author Name',
+        },
+    },
+    
 ];

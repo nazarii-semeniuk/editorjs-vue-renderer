@@ -33,6 +33,7 @@ const blocks: Record<string, Component> = {
     image: defineAsyncComponent(() => import('./blocks/Image.vue')),
     list: defineAsyncComponent(() => import('./blocks/List.vue')),
     embed: defineAsyncComponent(() => import('./blocks/Embed.vue')),
+    quote: defineAsyncComponent(() => import('./blocks/Quote.vue')),
     ...props.customBlocks,
 };
 
