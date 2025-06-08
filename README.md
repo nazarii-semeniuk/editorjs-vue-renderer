@@ -40,17 +40,6 @@ const blocks = [
 
 ---
 
-## ⚠️ Security Warning
-
-🟧 Warning <br />
-This component uses v-html internally to render content like paragraphs and headers.<br />
-✅ Only pass trusted content (e.g., Editor.js output that you sanitize or own).<br />
-❌ Avoid passing user-submitted or untrusted HTML without proper sanitization.<br /><br />
-
-**You are responsible for ensuring the data is safe to render.**
-
----
-
 ## ⚙️ Props
 
 |        Prop       |              Type            |   Required  |                                                        Description                                                      |
