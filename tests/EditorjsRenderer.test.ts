@@ -3,6 +3,7 @@ import { mount } from '@vue/test-utils';
 import EditorjsRenderer from '../src/EditorjsRenderer.vue';
 
 import editorjsBlocks from './mocks/editorjsBlocks';
+import editorjsBlocksToSanitize from './mocks/editorjsBlocksToSanitize';
 import { markRaw } from 'vue';
 import Header from '../src/blocks/Header.vue';
 import Paragraph from '../src/blocks/Paragraph.vue';
@@ -128,5 +129,28 @@ describe('EditorjsRenderer', () => {
         expect(component.html()).toContain('<th>Heading 1</th>');
         expect(component.html()).toContain('<th>Heading 2</th>');
         expect(component.html()).toContain('<td>With Headings</td>');
+    });
+
+    it('sanitizes <script> tags in blocks, using v-html', async () => {
+        const component = mount(EditorjsRenderer, {
+            props: { editorjsBlocks: editorjsBlocksToSanitize, customBlocks: defaultBlocks },
+        });
+
+        expect(component.html()).toContain('<p class="paragraph">This is a paragraph block with content. It should be sanitized.</p>');
+        expect(component.html()).toContain('<h2 id="this-is-a-header-block-with-content-it-should-be-sanitized" class="header">This is a header block with content. It should be sanitized.</h2>');
+        expect(component.html()).toContain('<li>Item 1. It should be sanitized.</li>');
+        expect(component.html()).toContain('<td>Second. It should be sanitized.</td>');
+        expect(component.html()).not.toContain('alert("XSS")');
+    });
+
+    it('keeps safe HTML tags in blocks', async () => {
+        const component = mount(EditorjsRenderer, {
+            props: { editorjsBlocks: editorjsBlocksToSanitize, customBlocks: defaultBlocks },
+        });
+
+        expect(component.html()).toContain('<strong>bold</strong>');
+        expect(component.html()).toContain('<em>italic</em>');
+        expect(component.html()).toContain('<a href="https://example.com">Example</a>');
+        expect(component.html()).toContain('<a href="https://example.com" target="_blank" rel="noopener noreferrer">Example with attributes</a>');
     });
 });
