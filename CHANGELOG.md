@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v1.0.0
+
+[compare changes](https://github.com/nazarii-semeniuk/editorjs-vue-renderer/compare/v0.4.0...v1.0.0)
+
+### 🚀 Enhancements
+
+- Adds dompurify to sanitize outputs in v-html ([84d3d34](https://github.com/nazarii-semeniuk/editorjs-vue-renderer/commit/84d3d34))
+
+### 🏡 Chore
+
+- Removes security warning from README ([6a9ee47](https://github.com/nazarii-semeniuk/editorjs-vue-renderer/commit/6a9ee47))
+
+### ❤️ Contributors
+
+- Nazarii Semeniuk <qnazar.semenyuk@gmail.com>
+
 ## v0.4.0
 
 [compare changes](https://github.com/nazarii-semeniuk/editorjs-vue-renderer/compare/v0.3.0...v0.4.0)
