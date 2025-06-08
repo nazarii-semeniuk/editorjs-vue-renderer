@@ -63,10 +63,10 @@ This component uses v-html internally to render content like paragraphs and head
 
 |      Type    | Status        |                  Example usage                 |
 |:------------:|---------------|:----------------------------------------------:|
-|   [paragraph](https://www.npmjs.com/package/@editorjs/paragraph)  | Supported ✅   |   { text: "Hello world" }                      |
-|   [header](https://www.npmjs.com/package/@editorjs/header)     | Supported ✅   |   { text: "Title", level: 2 }                  |
-|   [image](https://www.npmjs.com/package/@editorjs/image)      | Supported ✅   |   { url: "/path/to.jpg", caption: "Image" }    |
-|   [list](https://www.npmjs.com/package/@editorjs/list)       | Supported ✅   |   { items: ["one", "two"], style: "ordered" }  |
+|   [paragraph](https://www.npmjs.com/package/@editorjs/paragraph)  | Supported ✅   |   { text: string; }                      |
+|   [header](https://www.npmjs.com/package/@editorjs/header)     | Supported ✅   |   { text: string, level: number }                  |
+|   [image](https://www.npmjs.com/package/@editorjs/image)      | Supported ✅   |   { url: string, caption?: string; }    |
+|   [list](https://www.npmjs.com/package/@editorjs/list)       | Supported ✅   |   { items: string[], style: 'ordered' | 'unordered' }  |
 | [quote](https://www.npmjs.com/package/@editorjs/quote)        | Supported ✅ |  { text: string, caption?: string }                                           |
 | [table](https://www.npmjs.com/package/@editorjs/table)        | Supported ✅ |  { withHeadings?: boolean, content: Array<string[]> }                                           |
 | [embed](https://www.npmjs.com/package/@editorjs/embed)        | Partial support ☑️ <br /> (youtube only) |  { service: 'youtube', embed: string }                                              |
