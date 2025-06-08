@@ -78,4 +78,22 @@ export default [
             text: 'No caption.',
         },
     },
+    {
+        id: 'k',
+        type: 'table',
+        data: {
+            content: [['First', 'No Headings']]
+        }
+    },
+    {
+        id: 'l',
+        type: 'table',
+        data: {
+            withHeadings: true,
+            content: [
+                ['Heading 1', 'Heading 2'],
+                ['Second', 'With Headings'],
+            ],
+        },
+    },
 ];

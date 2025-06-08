@@ -10,6 +10,7 @@ import Image from '../src/blocks/Image.vue';
 import List from '../src/blocks/List.vue';
 import Embed from '../src/blocks/Embed.vue';
 import Quote from '../src/blocks/Quote.vue';
+import Table from '../src/blocks/Table.vue';
 
 describe('EditorjsRenderer', () => {
     const defaultBlocks = {
@@ -19,6 +20,7 @@ describe('EditorjsRenderer', () => {
         list: markRaw(List),
         embed: markRaw(Embed),
         quote: markRaw(Quote),
+        table: markRaw(Table),
     };
 
     it('renders paragraph block correctly', async () => {
@@ -105,5 +107,26 @@ describe('EditorjsRenderer', () => {
 
         const quoteCaptions = component.html().match(/<div class="quote__caption">/g);
         expect(quoteCaptions).toHaveLength(1);
+    });
+
+    it('renders table block correctly', async () => {
+        const component = mount(EditorjsRenderer, {
+            props: { editorjsBlocks: editorjsBlocks, customBlocks: defaultBlocks },
+        });
+
+        expect(component.html()).toContain('<table class="table">');
+        expect(component.html()).toContain('<td>First</td>');
+        expect(component.html()).toContain('<td>No Headings</td>');
+    });
+
+    it('renders table block with headings correctly', async () => {
+        const component = mount(EditorjsRenderer, {
+            props: { editorjsBlocks: editorjsBlocks, customBlocks: defaultBlocks },
+        });
+
+        expect(component.html()).toContain('<table class="table">');
+        expect(component.html()).toContain('<th>Heading 1</th>');
+        expect(component.html()).toContain('<th>Heading 2</th>');
+        expect(component.html()).toContain('<td>With Headings</td>');
     });
 });

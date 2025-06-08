@@ -4,8 +4,9 @@ import type { ImageProps } from './blocks/Image';
 import type { ListProps } from './blocks/List';
 import type { EmbedProps } from './blocks/Embed';
 import type { QuoteProps } from './blocks/Quote';
+import type { TableProps } from './blocks/Table';
 
-export type BlockType = 'header' | 'image' | 'list' | 'paragraph' | 'embed' | 'quote' | string;
+export type BlockType = 'header' | 'image' | 'list' | 'paragraph' | 'embed' | 'quote' | 'table' | string;
 
 export type BlockData = {
     header: HeaderProps;
@@ -14,6 +15,7 @@ export type BlockData = {
     paragraph: ParagraphProps;
     embed: EmbedProps;
     quote: QuoteProps;
+    table: TableProps;
     [key: string]: any; // Allow for additional block types
 }
 
